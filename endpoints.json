@@ -1,0 +1,32 @@
+- Get all User : https://master-wallet-api-dev.herokuapp.com/api/v1/user/
+METHOD: GET
+
+- Sign up:  https://master-wallet-api-dev.herokuapp.com/api/v1/user/register
+METHOD: POST
+BODY: {
+	"email": "david@test9.com",
+	"business_name": "random",
+	"password": "oneTimeTest",
+	"user_type": "admin",
+    "account_number": "3028087638",
+    "bank_name": "Polaris bank",
+    "mobile_number": "09099009990",
+    "BVN": "99990000990009"
+}
+
+-Login: https://master-wallet-api-dev.herokuapp.com/api/v1/user/authenticate
+METHOD: POST
+BODY:{
+    "email": "david@test4.com",
+    "password": "oneTimeTest"
+}
+
+
+account_number: "2143199687"
+bank_name: "firstbank"
+business_name: "Matchcore Technologies Limited"
+bvn: "22324540078"
+email: "temidayojunior@gmail.com"
+mobile_number: "08165620478"
+password: "pasture93"
+user_type: "admin"
