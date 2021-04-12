@@ -1,24 +1,4 @@
 <template>
-    <!-- <div class="container">
-        <form @submit.prevent="handleSubmit">
-        <h3>Admin Login</h3>
-
-        <div class="form-group">
-            <label for="">Email</label>
-            <input type="email" class="form-control" v-model="email" placeholder="Email.." />
-        </div>
-
-        <div class="form-group">
-            <label for="">Password</label>
-            <input type="password" class="form-control" v-model="password" placeholder="Password.." />
-        </div>
-
-        <button class="btn btn-primary btn-block">Login</button>
-
-    </form>
-    </div>
-</template> -->
-
     <div style="background-color: #1E74BB; height: 100%;">
         <div class="container" style="padding-top: 150px;">
         <h3 style="font-family:  roboto; text-align: center; color: #fff;"><strong>Welcome Back</strong></h3>
@@ -32,21 +12,22 @@
                         </div>
                     </div>
                     <div class="col-lg-6" style="padding-top: 70px;">
-                        <form @submit.prevent="handleSubmit">
+                        <form @submit.prevent="submit">
                             <div class="card2 card border-0 px-4 py-5">
-                            <div class="row px-3"> <label class="mb-1">
-                                    <h6 class="mb-0 text-sm">Email Address</h6>
-                                </label> <input class="mb-4" type="email" v-model="email" placeholder="Enter a valid email address"> </div>
-                            <div class="row px-3"> <label class="mb-1">
-                                    <h6 class="mb-0 text-sm">Password</h6>
-                                </label> <input type="password" v-model="password" placeholder="Enter password"> </div>
-                            <div class="row px-3 mb-4">
-                                <div class="custom-control custom-checkbox custom-control-inline"> <input id="chk1" type="checkbox" name="chk" class="custom-control-input"> <label for="chk1" class="custom-control-label text-sm">Remember me</label> </div> <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a>
+                                <div class="row px-3"> <label class="mb-1">
+                                        <h6 class="mb-0 text-sm">Email Address</h6>
+                                    </label> <input class="mb-4" type="email" v-model="email" placeholder="Enter a valid email address"> </div>
+                                <div class="row px-3"> <label class="mb-1">
+                                        <h6 class="mb-0 text-sm">Password</h6>
+                                    </label> <input type="password" v-model="password" placeholder="Enter password"> </div>
+                                <div class="row px-3 mb-4">
+                                    <div class="custom-control custom-checkbox custom-control-inline"> <input id="chk1" type="checkbox" name="chk" class="custom-control-input"> <label for="chk1" class="custom-control-label text-sm">Remember me</label> </div> <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a>
+                                </div>
+                                <div class="row mb-3 px-3"> <button type="submit" class="btn btn-primary text-center">Login</button> </div>
+                                <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <router-link to="/register" class="text-danger ">Register</router-link></small> </div>
                             </div>
-                            <div class="row mb-3 px-3"> <button type="submit" class="btn btn-primary text-center">Login</button> </div>
-                            <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <router-link to="/register" class="text-danger ">Register</router-link></small> </div>
-                        </div>
                         </form>
+                        <p v-if="showError" id="error">Email or Password is incorrect</p>
                     </div>
                 </div>
             </div>
@@ -57,28 +38,36 @@
 
 <script>
 
-import axios from 'axios'
+// import axios from 'axios'
+import { mapActions } from "vuex";
 export default {
     name: 'Login',
     data() {
         return {
-            email: '',
-            password: ''
-        }
+            form: {
+                email: '',
+                password: ''
+            },
+            showError: false
+        };
     },
 
     methods: {
-        async handleSubmit() {
-            const response  = await axios.post('/user/authenticate', {
-                email: this.email,
-                password: this.password
-            });
-
-            localStorage.setItem('token', response.data.token);
-            this.$router.push('/');
-        }
-    }
-}
+    ...mapActions(["LogIn"]),
+    async submit() {
+      const User = new FormData();
+      User.append("email", this.form.email);
+      User.append("password", this.form.password);
+      try {
+          await this.LogIn(User);
+          this.$router.push("/");
+          this.showError = false
+      } catch (error) {
+        this.showError = true
+      }
+    },
+  },
+};
 </script>
 
 <style>

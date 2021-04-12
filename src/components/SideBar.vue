@@ -1,6 +1,5 @@
 <template>
-    <v-navigation-drawer permanent color="#F4F5F9" app>
-        <v-toolbar-side-icon class="black--text"></v-toolbar-side-icon>
+    <v-navigation-drawer v-model="drawer" permanent color="#F4F5F9" app>
         <v-list-item class="px-2 py-5">
             <v-list-item-title class="text-capitalize" align="center">
                 <v-img src="mswallet.png" height="80" width="200"></v-img>

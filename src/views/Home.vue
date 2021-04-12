@@ -2,6 +2,7 @@
   <div class="home">
     <SideBar/>
     <v-toolbar class="mt-5" flat>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             <v-toolbar-title>
                 <span class="caption">Overview Dashboard</span><br>Wallet
             </v-toolbar-title>
@@ -44,8 +45,8 @@
     <v-container class="mt-5">
       <v-row>
         <v-col cols="12" sm="4">
-          <v-hover v-slot="{hover}" open-delay="200">
-            <v-card color="cyan darken-1" :elevation="hover ? 16 :2 ">
+          <v-hover v-slot="{ hover }" open-delay="200">
+            <v-card color="cyan darken-1" :elevation="hover ? 16 : 2">
               <v-row>
                 <v-col cols="12" sm="8">
                   <v-list-item three-line>
@@ -71,10 +72,9 @@
             </v-card>
           </v-hover>
         </v-col>
-
         <v-col cols="12" sm="4">
-          <v-hover v-slot="{hover}" open-delay="200">
-            <v-card color="pink darken-1" :elevation="hover ? 16 :2 ">
+          <v-hover v-slot="{hover }" open-delay="200">
+            <v-card color="pink darken-1" :elevation="hover ? 16 : 2">
               <v-row>
                 <v-col cols="12" sm="8">
                   <v-list-item three-line>
@@ -85,7 +85,7 @@
                         </v-btn>
                       </div>
                       <v-list-item-title class="headline mb-1 white--text">
-                        $7720.50
+                        $7220.50
                       </v-list-item-title>
                       <v-list-item-subtitle class="white--text">Market Cap $151.458</v-list-item-subtitle>
                     </v-list-item-content>
@@ -100,10 +100,9 @@
             </v-card>
           </v-hover>
         </v-col>
-
         <v-col cols="12" sm="4">
-          <v-hover v-slot="{hover}" open-delay="200">
-            <v-card color="orange darken-1" :elevation="hover ? 16 :2 ">
+          <v-hover v-slot="{ hover }" open-delay="200">
+            <v-card color="orange darken-1" :elevation="hover ? 16 :2">
               <v-row>
                 <v-col cols="12" sm="8">
                   <v-list-item three-line>
@@ -114,7 +113,7 @@
                         </v-btn>
                       </div>
                       <v-list-item-title class="headline mb-1 white--text">
-                        $3520.50
+                        $350.50
                       </v-list-item-title>
                       <v-list-item-subtitle class="white--text">Market Cap $151.458</v-list-item-subtitle>
                     </v-list-item-content>
@@ -130,18 +129,16 @@
           </v-hover>
         </v-col>
       </v-row>
-
-
       <v-row>
         <v-col cols="12" sm="6">
           <v-card>
             <v-app-bar flat color="rgba(0,0,0,0)">
               <v-toolbar-title class="title black--text pl-0 ml-2">
-                Transactions
+                Impression 
               </v-toolbar-title>
               <v-spacer></v-spacer>
               <v-btn color="deep-purple" class="white--text mr-2">Weekly</v-btn>
-              <v-btn color="deep-purple lighten-4" class="deep-purple--text">Monthly</v-btn>
+              <v-btn color="deep-purple lighten-4" class="deep-purple--text ">Monthly</v-btn>
             </v-app-bar>
             <v-sparkline
             :fill="fill"
@@ -153,7 +150,6 @@
             color="deep-purple"></v-sparkline>
           </v-card>
         </v-col>
-
         <v-col cols="12" sm="6">
           <v-card>
             <v-app-bar flat color="rgba(0,0,0,0)">
@@ -292,8 +288,14 @@ import SideBar from '../components/SideBar'
       type: 'trend',
       autoLineWidth: false,
       fills: false,
-      drawer: false
-    })
+      drawer: false,
+      group: null,
+    }),
+    watch: {
+      group () {
+        this.drawer = false
+      },
+    },
   }
 </script>
 
