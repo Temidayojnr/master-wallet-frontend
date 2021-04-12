@@ -16,10 +16,10 @@
                             <div class="card2 card border-0 px-4 py-5">
                                 <div class="row px-3"> <label class="mb-1">
                                         <h6 class="mb-0 text-sm">Email Address</h6>
-                                    </label> <input class="mb-4" type="email" v-model="email" placeholder="Enter a valid email address"> </div>
+                                    </label> <input class="mb-4" type="email" v-model="form.email" placeholder="Enter a valid email address"> </div>
                                 <div class="row px-3"> <label class="mb-1">
                                         <h6 class="mb-0 text-sm">Password</h6>
-                                    </label> <input type="password" v-model="password" placeholder="Enter password"> </div>
+                                    </label> <input type="password" v-model="form.password" placeholder="Enter password"> </div>
                                 <div class="row px-3 mb-4">
                                     <div class="custom-control custom-checkbox custom-control-inline"> <input id="chk1" type="checkbox" name="chk" class="custom-control-input"> <label for="chk1" class="custom-control-label text-sm">Remember me</label> </div> <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a>
                                 </div>
@@ -27,7 +27,9 @@
                                 <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <router-link to="/register" class="text-danger ">Register</router-link></small> </div>
                             </div>
                         </form>
-                        <p v-if="showError" id="error">Email or Password is incorrect</p>
+                        <div class="alert alert-danger" v-if="showError" id="error">
+                            <p class="text-center">Email or Password is incorrect</p>
+                        </div>
                     </div>
                 </div>
             </div>

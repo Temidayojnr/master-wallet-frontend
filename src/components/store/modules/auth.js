@@ -2,7 +2,6 @@ import axios from "axios";
 
 const state = {
   user: null,
-  posts: null,
 };
 
 const getters = {
@@ -20,7 +19,7 @@ const actions = {
   },
 
   async LogIn({commit}, user) {
-    await axios.post("/user/authenticate", user);
+    await axios.post("user/authenticate", user);
     await commit("setUser", user.get("email"));
   },
 
