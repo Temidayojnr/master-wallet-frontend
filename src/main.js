@@ -8,6 +8,9 @@ import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import store from './components/store'
+import axios from 'axios'
+
+axios.defaults.baseURL = 'https://master-wallet-api-dev.herokuapp.com/api/v1';
 
 import vuetify from './plugins/vuetify';
 Vue.use(BootstrapVue);
@@ -18,8 +21,8 @@ Vue.config.productionTip = false
 
 
 new Vue({
-  store,
   router,
+  store,
   vuetify,
   render: h => h(App)
 }).$mount('#app')

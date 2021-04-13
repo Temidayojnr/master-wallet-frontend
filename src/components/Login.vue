@@ -8,11 +8,12 @@
                     <div class="col-lg-6" style="padding-top: 70px;">
                         <div class="card1 pb-5">
                             <!-- <div class="row"> <v-img src="mswallet.png" height="50" width="50" class="logo"></v-img> </div> -->
-                            <div class="row px-3 justify-content-center mt-4 mb-5 border-line"><v-img src="mswallet.png" height="150" width="150" class="logo"></v-img>  </div>
+                            <div class="row px-3 justify-content-center mt-4 mb-5 border-line"><v-img src="mswallet.png" height="150" width="80" class="logo"></v-img>  </div>
                         </div>
                     </div>
                     <div class="col-lg-6" style="padding-top: 70px;">
-                        <form @submit.prevent="submit">
+                        <form @submit.prevent="handleSubmit">
+                            {{form}}
                             <div class="card2 card border-0 px-4 py-5">
                                 <div class="row px-3"> <label class="mb-1">
                                         <h6 class="mb-0 text-sm">Email Address</h6>
@@ -27,9 +28,6 @@
                                 <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <router-link to="/register" class="text-danger ">Register</router-link></small> </div>
                             </div>
                         </form>
-                        <div class="alert alert-danger" v-if="showError" id="error">
-                            <p class="text-center">Email or Password is incorrect</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -49,26 +47,20 @@ export default {
             form: {
                 email: '',
                 password: ''
-            },
-            showError: false
+            }
         };
     },
 
     methods: {
-    ...mapActions(["LogIn"]),
-    async submit() {
-      const User = new FormData();
-      User.append("email", this.form.email);
-      User.append("password", this.form.password);
-      try {
-          await this.LogIn(User);
-          this.$router.push("/");
-          this.showError = false
-      } catch (error) {
-        this.showError = true
-      }
-    },
-  },
+        ...mapActions({
+            signIn: 'users/authenticate',
+        }),
+
+        handleSubmit () {
+            this.signIn(this.form)
+        }
+    }
+
 };
 </script>
 
