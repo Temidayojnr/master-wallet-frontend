@@ -3,7 +3,7 @@ import axios from 'axios'
 export default {
   namespaced: true,
   state: {
-    token: null,
+    token: localStorage.getItem('user-token') || '',
     user: null,
   },
 
@@ -14,17 +14,30 @@ export default {
   },
 
   actions: {
-    async signIn(_, credentials) {
-      let response = axios.post('/user/authenticate', credentials)
-
-      this.$store.dispatch('attempt', response.data.token);
+    async signIn({ dispatch }, credentials) {
+       axios.post('/user/authenticate', credentials, {
+        withCredentials: false
+      })
+      .then((res) => {
+        const {token}  = res.data
+        console.log(res);
+        dispatch('attempt', token);
+        localStorage.setItem('user-token', token);
+      });
     },
 
     async attempt ({ commit }, token) {
       commit('SET_TOKEN', token);
     }
-  }
+  },
+
+    getters: {
+      /* Partially Implemented not for production use */
+      loggedIn: state => !!state.token
+      
+  },
 }
+
 
 
 

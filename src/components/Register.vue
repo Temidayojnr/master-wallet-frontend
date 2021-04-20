@@ -88,7 +88,7 @@ export default {
                 mobile_number: this.mobile_number,
                 BVN: this.BVN
             };
-            axios.post('/user/register', data)
+            axios.post('/user/register', data, {withCredentials: false})
                 .then(
                     res => {
                         console.log(res)

@@ -13,7 +13,6 @@
                     </div>
                     <div class="col-lg-6" style="padding-top: 70px;">
                         <form @submit.prevent="handleSubmit">
-                            {{form}}
                             <div class="card2 card border-0 px-4 py-5">
                                 <div class="row px-3"> <label class="mb-1">
                                         <h6 class="mb-0 text-sm">Email Address</h6>
@@ -52,12 +51,11 @@ export default {
     },
 
     methods: {
-        ...mapActions({
-            signIn: 'users/authenticate',
-        }),
+        ...mapActions("auth", ["signIn"]),
 
         handleSubmit () {
             this.signIn(this.form)
+            this.$router.push('/')
         }
     }
 

@@ -87,7 +87,9 @@ export default {
     },
 
     mounted() {
-        axios.get('/user')
+        axios.get('/user', {
+            withCredentials: false
+        })
         .then((resp) => {
             this.list = resp.data.data;
             console.log(resp.data.data)
