@@ -15,15 +15,13 @@ export default {
 
   actions: {
     async signIn({ dispatch }, credentials) {
-       axios.post('/user/authenticate', credentials, {
+       const response  = await axios.post('/user/authenticate', credentials, {
         withCredentials: false
       })
-      .then((res) => {
-        const {token}  = res.data
-        console.log(res);
+      const {token}  = response.data
+        // console.log();
         dispatch('attempt', token);
         localStorage.setItem('user-token', token);
-      });
     },
 
     async attempt ({ commit }, token) {

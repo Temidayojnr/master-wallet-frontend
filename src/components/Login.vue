@@ -50,12 +50,18 @@ export default {
         };
     },
 
+    created() {
+        if (localStorage.getItem('user-token')) {
+            this.$router.push('/dashboard')
+        }
+    },
+
     methods: {
         ...mapActions("auth", ["signIn"]),
 
-        handleSubmit () {
-            this.signIn(this.form)
-            this.$router.push('/')
+       async handleSubmit () {
+            await this.signIn(this.form)
+            this.$router.push('/dashboard')
         }
     }
 

@@ -10,7 +10,7 @@ import Register from './components/Register.vue'
 
 import UserList from './components/UserList.vue'
 
-import store from './components/store'
+// import store from './components/store'
 
 import Router from "vue-router"
 
@@ -29,6 +29,10 @@ Vue.use(VueRouter)
         },
         {
             path: '/',
+            redirect: '/dashboard'
+        },
+        {
+            path: '/dashboard',
             component: Home,
             meta: {requiresAuth: true},
         },
@@ -59,11 +63,13 @@ Vue.use(VueRouter)
 
     router.beforeEach((to, from, next) => {
         if(to.matched.some(record => record.meta.requiresAuth)) {
-          if (store.getters.loggedIn) {
+          if (localStorage.getItem('user-token')) {
+              console.log('Logged IN')
             next()
             return
           }
-          next()
+          console.log('NOt logged IN')
+          next('/login')
         } else {
           next()
         }
