@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer v-model="drawer" :permanent="$vuetify.breakpoint.mdAndUp" color="#F4F5F9" app>
+    <v-navigation-drawer class="app--drawer" app fixed v-model="drawer" clipped color="#F4F5F9">
         <v-list-item class="px-2 py-5">
             <v-list-item-title class="text-capitalize" align="center">
                 <v-img src="mswallet.png" height="80" width="200"></v-img>
@@ -7,7 +7,7 @@
                 
             </v-list-item-title>
         </v-list-item>
-        <v-list dense>
+        <v-list nav dense>
             <v-list-item-group v-model="selectedItem" color="rgb(30,116,187)">
                 <v-list-item v-for="(item, i) in items" :key="i" router :to="item.route">
                     <v-list-item-icon>
@@ -26,7 +26,7 @@
 export default {
     data: () => ({
         selectedItem: 0,
-        drawer: null,
+        drawer: true,
         group: null,
         items: [
             {icon: 'fas fa-home', text: 'Dashboard', route: '/'},
@@ -35,20 +35,6 @@ export default {
         ]
 
     }),
-    // computed: {
-    // //     mini: {
-    // //         get() {
-    // //         return this.$vuetify.breakpoint.mdAndDown || this.overwriteBreakpoint;            
-    // //         },
-    // //         set(value) {
-    // //         this.overwriteBreakpoint = value;
-    // //         }
-    // // },
-    // watch: {
-    //   group () {
-    //     this.drawer = false
-    //   },
-    // },
 }
 </script>
 
