@@ -29,7 +29,7 @@ export default {
         drawer: true,
         group: null,
         items: [
-            {icon: 'fas fa-home', text: 'Dashboard', route: '/'},
+            {icon: 'fas fa-home', text: 'Dashboard', route: '/dashboard'},
             {icon: 'fas fa-users', text: 'Users', route: '/users'},
             {icon: 'fas fa-dolly', text: 'Transactions', route: '/transactions'},
         ]
