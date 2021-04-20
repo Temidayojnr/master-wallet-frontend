@@ -2,7 +2,7 @@
   <div class="home">
     <SideBar/>
     <v-toolbar class="mt-5" flat>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <!-- <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon> -->
             <v-toolbar-title>
                 <span class="caption">Overview Dashboard</span><br>Wallet
             </v-toolbar-title>
@@ -46,7 +46,7 @@
       <v-row>
         <v-col cols="12" sm="4">
           <v-hover v-slot="{ hover }" open-delay="200">
-            <v-card color="cyan darken-1" :elevation="hover ? 16 : 2">
+            <v-card color="cyan darken-1" :elevation="hover ? 16 : 2" style="padding-bottom: 23px;">
               <v-row>
                 <v-col cols="12" sm="8">
                   <v-list-item three-line>
@@ -74,7 +74,7 @@
         </v-col>
         <v-col cols="12" sm="4">
           <v-hover v-slot="{hover }" open-delay="200">
-            <v-card color="pink darken-1" :elevation="hover ? 16 : 2">
+            <v-card color="pink darken-1" :elevation="hover ? 16 : 2" style="padding-bottom: 23px;">
               <v-row>
                 <v-col cols="12" sm="8">
                   <v-list-item three-line>
@@ -102,7 +102,7 @@
         </v-col>
         <v-col cols="12" sm="4">
           <v-hover v-slot="{ hover }" open-delay="200">
-            <v-card color="orange darken-1" :elevation="hover ? 16 :2">
+            <v-card color="orange darken-1" :elevation="hover ? 16 :2" style="padding-bottom: 23px;">
               <v-row>
                 <v-col cols="12" sm="8">
                   <v-list-item three-line>
