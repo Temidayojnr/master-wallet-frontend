@@ -9,7 +9,7 @@
         </v-list-item>
         <v-list nav dense>
             <v-list-item-group v-model="selectedItem" color="rgb(30,116,187)">
-                <v-list-item v-for="(item, i) in items" :key="i" router :to="item.route">
+                <v-list-item v-for="(item, i) in items" :key="i" router :to="item.route" @click="menuClick(item.action)">
                     <v-list-item-icon>
                         <v-icon v-text="item.icon"></v-icon>
                     </v-list-item-icon>
@@ -32,9 +32,23 @@ export default {
             {icon: 'fas fa-home', text: 'Dashboard', route: '/dashboard'},
             {icon: 'fas fa-users', text: 'Users', route: '/users'},
             {icon: 'fas fa-dolly', text: 'Transactions', route: '/transactions'},
+            {icon: 'fas fa-sign-out-alt', text: 'Logout', action: 'logout'},
         ]
 
     }),
+
+    methods: {
+        menuClick(action) {
+            if (action == "logout") {
+                localStorage.removeItem("user-token");
+                this.$router.push('/login');
+            }
+        }
+        // logout() {
+        //     localStorage.removeItem("user-token");
+        //     this.$router.push('/login');
+        // }
+    }
 }
 </script>
 
