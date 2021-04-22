@@ -19,9 +19,9 @@
                         </v-btn>
                       </div>
                       <v-list-item-title class="headline mb-1 white--text">
-                        $8520.50
+                        ₦800,520.50
                       </v-list-item-title>
-                      <v-list-item-subtitle class="white--text">Market Cap $151.458</v-list-item-subtitle>
+                      <v-list-item-subtitle class="white--text">Market Cap ₦151.458</v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
                 </v-col>
@@ -47,9 +47,9 @@
                         </v-btn>
                       </div>
                       <v-list-item-title class="headline mb-1 white--text">
-                        $7220.50
+                        ₦750,520.50
                       </v-list-item-title>
-                      <v-list-item-subtitle class="white--text">Market Cap $151.458</v-list-item-subtitle>
+                      <v-list-item-subtitle class="white--text">Market Cap ₦151.458</v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
                 </v-col>
@@ -75,9 +75,9 @@
                         </v-btn>
                       </div>
                       <v-list-item-title class="headline mb-1 white--text">
-                        $350.50
+                        ₦350.50
                       </v-list-item-title>
-                      <v-list-item-subtitle class="white--text">Market Cap $151.458</v-list-item-subtitle>
+                      <v-list-item-subtitle class="white--text">Market Cap ₦151.458</v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
                 </v-col>
@@ -124,11 +124,11 @@
                 <v-icon color="purple">fab fa-bitcoin</v-icon>
               </v-btn>
               <v-toolbar-title class="title black--text ml-2">
-                Sent Bitcoin <span class="caption"><br>To Bitcoin Address</span>
+                Sent Transactions <span class="caption"><br>Active Transactions</span>
               </v-toolbar-title>
               <v-spacer></v-spacer>
               <v-toolbar-title class="subtitle-1 black--text ml-2">
-                -0.00257 BTC
+                -0.00257 NGN
               </v-toolbar-title>
               <v-icon color="green" class="ml-2">fas fa-long-arrow-alt-up</v-icon>
             </v-app-bar>
@@ -137,11 +137,11 @@
                 <v-icon color="green">fas fa-yen-sign</v-icon>
               </v-btn>
               <v-toolbar-title class="title black--text ml-2">
-                Receive Lightcoin <span class="caption"><br>Pending</span>
+                Received Transactions <span class="caption"><br>Pending</span>
               </v-toolbar-title>
               <v-spacer></v-spacer>
               <v-toolbar-title class="subtitle-1 black--text ml-2">
-                -0.0133643 LTC
+                -0.0133643 NGN
               </v-toolbar-title>
               <v-icon color="red" class="ml-2">fas fa-long-arrow-alt-down</v-icon>
             </v-app-bar>
