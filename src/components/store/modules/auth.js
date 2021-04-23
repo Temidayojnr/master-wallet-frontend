@@ -26,11 +26,11 @@ export default {
 
     async attempt ({ commit }, token) {
       commit('SET_TOKEN', token);
-    }
+    },
+    
   },
 
     getters: {
-      /* Partially Implemented not for production use */
       loggedIn: state => !!state.token
       
   },

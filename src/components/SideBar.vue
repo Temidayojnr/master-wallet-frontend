@@ -34,7 +34,9 @@ export default {
             {icon: 'fas fa-dolly', text: 'Transactions', route: '/transactions'},
         ]
 
-    }),
+    })
+
+    
 }
 </script>
 
