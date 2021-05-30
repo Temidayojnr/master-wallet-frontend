@@ -12,7 +12,7 @@
                             <th scope="col">Payment Method</th>
                             <th scope="col">Amount</th>
                             <th scope="col">Transaction Type</th>
-                            <th scope="col">Status</th>
+                            <th scope="col">Transaction Status</th>
                             <th scope="col">Terminal ID</th>
                             <th scope="col">Merchant ID</th>
                             <th scope="col">Transactionn BY</th>
