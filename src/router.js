@@ -10,6 +10,8 @@ import Register from './components/Register.vue'
 
 import UserList from './components/UserList.vue'
 
+import TransactionList from './components/TransactionList.vue'
+
 // import store from './components/store'
 
 import Router from "vue-router"
@@ -39,6 +41,11 @@ Vue.use(VueRouter)
         {
             path: '/users',
             component: UserList,
+            meta: {requiresAuth: true},
+        },
+        {
+            path: '/transactions',
+            component: TransactionList,
             meta: {requiresAuth: true},
         }
     ]

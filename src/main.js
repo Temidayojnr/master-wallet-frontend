@@ -15,6 +15,7 @@ axios.defaults.baseURL = 'https://master-wallet-api-dev.herokuapp.com/api/v1';
 import vuetify from './plugins/vuetify';
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
+Vue.use(require('vue-moment'));
 
 Vue.config.productionTip = false
 
