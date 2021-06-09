@@ -15,7 +15,7 @@
                     <v-list-item-content>
                       <div class="mb-4">
                         <v-btn fab color="cyan lighten-2" elevation="0">
-                          <v-icon color="white">₦</v-icon>
+                          <v-icon color="white" class="font-weight-bold">₦</v-icon>
                         </v-btn>
                       </div>
                       <v-list-item-title class="headline mb-1 white--text">
@@ -121,7 +121,7 @@
             </v-app-bar>
             <v-app-bar flat color="rgba(0,0,0,0)">
               <v-btn fab color="purple lighten-4" elevation="0">
-                <v-icon color="purple">₦</v-icon>
+                <v-icon color="purple" class="font-weight-bold">₦</v-icon>
               </v-btn>
               <v-toolbar-title class="title black--text ml-2">
                 Sent Transactions <span class="caption"><br>Active Transactions</span>
@@ -134,7 +134,7 @@
             </v-app-bar>
              <v-app-bar flat color="rgba(0,0,0,0)">
               <v-btn fab color="green lighten-4" elevation="0">
-                <v-icon color="green">₦</v-icon>
+                <v-icon color="green" class="font-weight-bold">₦</v-icon>
               </v-btn>
               <v-toolbar-title class="title black--text ml-2">
                 Received Transactions <span class="caption"><br>Pending</span>
