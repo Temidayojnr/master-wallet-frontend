@@ -12,6 +12,8 @@ import UserList from './components/UserList.vue'
 
 import TransactionList from './components/TransactionList.vue'
 
+import UserEdit from './components/UserEdit.vue'
+
 // import store from './components/store'
 
 import Router from "vue-router"
@@ -44,6 +46,12 @@ Vue.use(VueRouter)
             meta: {requiresAuth: true},
         },
         {
+            path: '/user/:id',
+            // name: 'edit-agent',
+            component: UserEdit,
+            meta: {requiresAuth: true},
+        },
+        {
             path: '/transactions',
             component: TransactionList,
             meta: {requiresAuth: true},
@@ -56,18 +64,6 @@ Vue.use(VueRouter)
         routes,
     });
 
-    // router.beforeEach((to, from, next) => {
-    //     if (to.matched.some(record => record.meta.requiresAuth)) {
-    //         if (store.getters.loggedIn) {
-    //             next()
-    //             return
-    //         }
-    //         router.push({ path: '/' });
-    //     } else {
-    //         next()
-    //     }
-    // })
-
     router.beforeEach((to, from, next) => {
         if(to.matched.some(record => record.meta.requiresAuth)) {
           if (localStorage.getItem('user-token')) {
@@ -75,7 +71,7 @@ Vue.use(VueRouter)
             next()
             return
           }
-          console.log('NOt logged IN')
+          console.log('Not logged IN')
           next('/login')
         } else {
           next()
@@ -83,9 +79,9 @@ Vue.use(VueRouter)
     })
 
     const originalPush = Router.prototype.push
-    Router.prototype.push = function push(location, onResolve, onReject) {
-    if (onResolve || onReject) return originalPush.call(this, location, onResolve, onReject)
-    return originalPush.call(this, location).catch(err => err)
+        Router.prototype.push = function push(location, onResolve, onReject) {
+        if (onResolve || onReject) return originalPush.call(this, location, onResolve, onReject)
+        return originalPush.call(this, location).catch(err => err)
     }
     
 

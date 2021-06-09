@@ -9,17 +9,17 @@
                     <v-tabs v-model="tab" color="rgb(30,116,187)" slider-size="3">
                     <v-tab>
                         <v-btn fab color="rgb(30,116,187) lighten-4" elevation="0">
-                        <v-icon color="rgb(30,116,187)">fab fa-bitcoin</v-icon>
+                        <v-icon color="rgb(30,116,187)">fas fa-money-bill-alt</v-icon>
                         </v-btn>
                     </v-tab>
                     <v-tab>
                         <v-btn fab color="red lighten-4" elevation="0">
-                        <v-icon color="red">fas fa-rupee-sign</v-icon>
+                        <v-icon color="red">fas fa-chart-line</v-icon>
                         </v-btn>
                     </v-tab>
                     <v-tab>
                         <v-btn fab color="blue lighten-4" elevation="0">
-                        <v-icon color="green">fas fa-yen-sign</v-icon>
+                        <v-icon color="green">fas fa-chart-pie</v-icon>
                         </v-btn>
                     </v-tab>
                     <v-tab>
