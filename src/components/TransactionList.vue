@@ -26,14 +26,14 @@
                             <td>{{item.transaction_type}}</td>
                             <!-- <td>{{item.status}}</td> -->
                             <td v-if="item.status === 'pending'">
-                                <v-btn color="error">
+                                <v-chip class="ma-2" color="red">
                                     Pending
-                                </v-btn>
+                                </v-chip>
                             </td>
                             <td v-else>
-                                <v-btn color="primary">
+                                <v-chip class="ma-2" color="primary">
                                 Success
-                                </v-btn>
+                                </v-chip>
                             </td>
                             <td>{{item.terminal_id}}</td>
                             <td>{{item.merchant_id}}</td>
