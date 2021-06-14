@@ -26,12 +26,12 @@
                             <td>{{item.transaction_type}}</td>
                             <!-- <td>{{item.status}}</td> -->
                             <td v-if="item.status === 'pending'">
-                                <v-chip class="ma-2" color="red">
+                                <v-chip color="red">
                                     Pending
                                 </v-chip>
                             </td>
                             <td v-else>
-                                <v-chip class="ma-2" color="primary">
+                                <v-chip color="primary">
                                 Success
                                 </v-chip>
                             </td>
@@ -76,9 +76,9 @@ export default {
 </script>
 
 <style>
-.container {
-    height: 100%;
-}
+    .container {
+        height: 100%;
+    }
     #table-body {
         background-color: #fff;
     }
@@ -86,6 +86,9 @@ export default {
         background-color: rgb(30, 116, 187);
     }
     th {
+        color: #fff;
+    }
+    .v-chip .v-chip__content {
         color: #fff;
     }
 </style>
