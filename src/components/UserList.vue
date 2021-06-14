@@ -15,8 +15,8 @@
                             <th scope="col">BVN</th>
                             <th scope="col">Email</th>
                             <th scope="col">User Type</th>
+                            <th scope="col">Terminal ID</th>
                             <th scope="col">Merchant ID</th>
-                            <th scope="col">Terimainal ID</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -93,14 +93,14 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="merchant_id">Merchant ID</label>
-                            <input type="text" placeholder="Merchant ID" v-model="item.terminal_id" class="form-control">
+                                <label for="merchant_id">Terminal ID</label>
+                            <input type="text" placeholder="Terminal ID" v-model="item.terminal_id" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="terminal_id">Terminal ID</label>
-                                <input type="text" placeholder="Terminal ID" v-model="item.merchant_id" class="form-control">
+                                <label for="terminal_id">Merchant ID</label>
+                                <input type="text" placeholder="Merchant ID" v-model="item.merchant_id" class="form-control">
                             </div>
                         </div>
                     </div>
