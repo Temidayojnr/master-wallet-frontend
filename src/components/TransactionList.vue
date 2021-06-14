@@ -15,8 +15,8 @@
                             <th scope="col">Transaction Status</th>
                             <th scope="col">Terminal ID</th>
                             <th scope="col">Merchant ID</th>
-                            <th scope="col">Transactionn BY</th>
-                            <th scope="col">Transactionn Date</th>
+                            <th scope="col">Transaction BY</th>
+                            <th scope="col">Transaction Date</th>
                         </tr>
                     </thead>
                     <tbody id="table-body">
