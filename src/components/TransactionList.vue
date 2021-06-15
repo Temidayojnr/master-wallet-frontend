@@ -14,7 +14,6 @@
                             <th scope="col">Transaction Type</th>
                             <th scope="col">Transaction Status</th>
                             <th scope="col">Terminal ID</th>
-                            <th scope="col">Merchant ID</th>
                             <th scope="col">Transaction BY</th>
                             <th scope="col">Transaction Date</th>
                         </tr>
@@ -36,8 +35,7 @@
                                 </v-chip>
                             </td>
                             <td>{{item.terminal_id}}</td>
-                            <td>{{item.merchant_id}}</td>
-                            <td>{{item.transaction_by}}</td>
+                            <td>{{item.transaction_by.business_name}}</td>
                             <td>{{item.createdAt | moment("dddd, MMMM Do YYYY")}}</td>
                         </tr>
                     </tbody>
