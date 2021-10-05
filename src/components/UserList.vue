@@ -14,6 +14,7 @@
                             <th scope="col">Bank Name</th>
                             <th scope="col">BVN</th>
                             <th scope="col">Email</th>
+                            <th scope="col">Available Balance</th>
                             <th scope="col">User Type</th>
                             <th scope="col">Terminal ID</th>
                             <th scope="col">Merchant ID</th>
@@ -28,6 +29,7 @@
                             <td>{{item.bank_name}}</td>
                             <td>{{item.BVN}}</td>
                             <td>{{item.email}}</td>
+                            <td>₦{{Number(item.available_balance).toLocaleString()}}</td>
                             <td>{{item.user_type}}</td>
                             <td>{{item.terminal_id}}</td>
                             <td>{{item.merchant_id}}</td>
