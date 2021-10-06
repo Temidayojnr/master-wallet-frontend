@@ -115,15 +115,14 @@ export default {
   methods: {
     readDataFromAPI() {
       this.loading = true;
-      const { sortBy, sortDesc, page, itemsPerPage } = this.options;
-      // console.log(sortBy);
+      const {page, itemsPerPage } = this.options;
+      console.log('page',page);
+      console.log('itemsPerPage',itemsPerPage);
       axios
         .get("/transaction", {
           params: {
-            sortBy: sortBy,
-            sortDesc: sortDesc,
-            page: page,
-            limit: itemsPerPage,
+            page: 1,
+            limit: 10,
           },
           withCredentials: false,
         })
@@ -132,7 +131,7 @@ export default {
           this.loading = false;
           this.list = response.data.data;
           this.totalList = response.data.total;
-          console.log(response.data.data);
+          // console.log(response.data.data);
         });
     },
   },
