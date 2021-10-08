@@ -44,6 +44,7 @@
 
     <v-container>
       <v-card>
+        <v-card-title>Transactions</v-card-title>
         <v-data-table
           :headers="headers"
           :items="list"
@@ -51,6 +52,7 @@
           :server-items-length="totalList"
           :loading="loading"
           :search="search"
+          :total="total"
         >
           <template v-slot:item.createdAt="{ item }">
             {{ item.createdAt | moment("Do MMMM YYYY") }}
@@ -115,14 +117,16 @@ export default {
   methods: {
     readDataFromAPI() {
       this.loading = true;
-      const {page, itemsPerPage } = this.options;
+      const {page, itemsPerPage, total } = this.options;
       console.log('page',page);
+      console.log(total);
       console.log('itemsPerPage',itemsPerPage);
       axios
         .get("/transaction", {
           params: {
-            page: 1,
-            limit: 10,
+            page: page,
+            total: total,
+            // limit: 10,
           },
           withCredentials: false,
         })
@@ -163,7 +167,7 @@ export default {
 #table-body {
   background-color: #fff;
 }
-.thead {
+.v-data-table .thead {
   background-color: rgb(30, 116, 187);
 }
 th {
