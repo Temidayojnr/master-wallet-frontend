@@ -14,6 +14,8 @@ BODY: {
     "BVN": "99990000990009"
 }
 
+//NEW ENDPOINT: https://master-wallet-fgp8w.ondigitalocean.app/api/v1
+
 -Login: https://master-wallet-api-dev.herokuapp.com/api/v1/user/authenticate
 METHOD: POST
 BODY:{

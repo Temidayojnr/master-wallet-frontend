@@ -135,7 +135,7 @@ export default {
           this.loading = false;
           this.list = response.data.data;
           this.totalList = response.data.total;
-          // console.log(response.data.data);
+          console.log(response.data.data);
         });
     },
   },

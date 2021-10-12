@@ -10,7 +10,7 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 import store from './components/store'
 import axios from 'axios'
 
-axios.defaults.baseURL = 'https://master-wallet-api-dev.herokuapp.com/api/v1';
+axios.defaults.baseURL = 'https://master-wallet-fgp8w.ondigitalocean.app/api/v1';
 
 import vuetify from './plugins/vuetify';
 Vue.use(BootstrapVue);
